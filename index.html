@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Garpo Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons/css/boxicons.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #E0E0E0;
+            background-color: #56acbb;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 10px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border: 2px solid black;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .navbar a:hover {
+            background: #f0f0f0;
+            color: black;
+            border-color: #333;
+        }
+
+        .header {
+            position: relative;
+            height: 100vh;
+            background-image: url('folk.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 10%;
+            color: #E0E0E0;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 700px;
+            text-align: left;
+            margin-left: 0;
+            padding-left: 20px;
+        }
+
+        .header-content h1,
+        .header-content h3,
+        .header-content p {
+            color: #000000;
+        }
+
+        .btn-box {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .btn-box a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 50px;
+            border: 2px solid #151616;
+            border-radius: 8px;
+            font-size: 19px;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background 0.3s, color 0.3s;
+            background: transparent;
+        }
+
+        .btn-box a:hover {
+            background: #4f2f42;
+            color: #E0E0E0;
+            border-color: #333;
+        }
+
+        .btn-box a[href="#contact"] {
+            background: transparent;
+            border: 2px solid #0e1010;
+        }
+
+        .btn-box a[href="#about"] {
+            background: #56acbb;
+            border: 2px solid #56acbb;
+        }
+
+        .about-section {
+            position: relative;
+            height: 100vh;
+            background-image: url('folk.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E0E0E0;
+            overflow: hidden;
+        }
+
+        .about-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .about-content {
+            position: relative;
+            max-width: 800px;
+            width: 90%;
+            background: rgba(40, 38, 38, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .about-content:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-content h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        #services {
+            position: relative;
+            height: 100vh;
+            background-image: url('three.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1717;
+            overflow: hidden;
+        }
+
+        #services h2 {
+            color: #000000;
+        }
+
+        #services .card {
+            border: solid #41290a;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            background-color: #b6b0b0;
+            max-width: 600px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #services .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        #services .card:active {
+            transform: translateY(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #services h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #000;
+        }
+
+        #services .card h3 {
+            color: #000000;
+        }
+
+        .services-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .portfolio-container {
+            height: 100vh;
+            background-color: #708090;
+            background-image: url('ev.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            color: #1a1717;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .portfolio-container h2 {
+            color: #1a1717;
+            margin-bottom: 30px;
+            font-size: 3rem;
+        }
+
+        .portfolio {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .portfolio img {
+            width: 700px;
+            height: 700px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px;
+        }
+
+        .portfolio img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .contact {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body id="home">
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <header class="header">
+        <div class="header-content">
+            <h1>Somesum <span>Sam!</span></h1>
+            <h3><span class="multiple-text"></span></h3>
+            <p>I am a 3rd year college student taking up Bachelor of Science Major in Computer Science. Apart from being a web developer, I also write editorials and stories. I am a passionate person and have the flame to do the things I love.</p>
+            <div class="btn-box">
+                <a href="#Contact">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about-section" class="about-section">
+        <div class="about-content">
+            <h1>About Me</h1>
+            <p>Hi, I'm Samantha. With no prior knowledge of computers, I embarked on a journey into computer science driven by curiosity and a desire to understand technology. What began as a challenge quickly became a passion as I explored coding and problem-solving. Despite the steep learning curve, my dedication and enthusiasm have transformed my initial uncertainty into a rewarding pursuit. Each step in this journey has not only expanded my technical skills but also deepened my appreciation for the possibilities within the digital world.</p>
+        </div>
+    </section>
+    
+    <section id="services" class="section">
+        <div class="card">
+            <h3>Prototyping</h3>
+            <p>Developing and presenting interactive prototypes to visualize and test design concepts before full-scale development.</p>
+        </div>
+        <div class="card">
+            <h3>Maintenance and Support</h3>
+            <p>Offering ongoing support and updates to ensure that websites remain functional, secure, and up-to-date with the latest technologies.</p>
+        </div>
+        <div class="card">
+            <h3>Responsive Design</h3>
+            <p>Crafting websites that adapt seamlessly to different screen sizes and devices, ensuring a consistent and optimal user experience.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio-container">
+        <div class="portfolio">
+            <img src="LAM.png" alt="Website 1">
+            <img src="TS.png" alt="Website 2">
+        </div>
+    </section>
+    
+    <footer id="Contact" class="contact">
+        <div class="contact-content">
+            <h2>Connect with Me</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/itssamrivera/" target="_blank" title="Facebook" aria-label="Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="https://twitter.com/Somesum" target="_blank" title="Twitter" aria-label="Twitter">
+                    <i class="bx bxl-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/sulkmasterr" target="_blank" title="Instagram" aria-label="Instagram">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
